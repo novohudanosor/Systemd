@@ -8,5 +8,12 @@
 6. **systemctl start watchlog.timer**
 7. **tail -f /var/log/messages** проверяем вывод, что все работает
 8. ![alt text](./Pictures/1.png)
+## Из epel установить spawn-fcgi и переписать init-скрипт на unit-файл. Имя сервиса должно также называться.
+1. Устанавливаем spawn-fcgi и необходимые для него пакеты: ``` yum install epel-release -y && yum install spawn-fcgi php php-cli mod_fcgid httpd -y ```
+2. раскомментировать строки с переменными в **/etc/sysconfig/spawn-fcgi** и создадим юнит **/etc/systemd/system/spawn-fcgi.service**
+3. Убеждаемся, что все успешно работает:  ``` systemctl start spawn-fcgi  ```  ``` systemctl status spawn-fcgi  ```
+4. ![alt text](./Pictures/2.png)
+5. 
+
 
 
