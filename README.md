@@ -13,14 +13,14 @@
 2. раскомментировать строки с переменными в **/etc/sysconfig/spawn-fcgi** и создадим юнит **/etc/systemd/system/spawn-fcgi.service**
 3. Убеждаемся, что все успешно работает:  ``` systemctl start spawn-fcgi  ```  ``` systemctl status spawn-fcgi  ```
 4. ![alt text](./Pictures/2.png)
-5. ## Запустить несколько инстансов сервера
-6. Для запуска нескольких экземпляров сервиса будем использовать шаблон в конфигурации файла окружения /usr/lib/systemd/system/httpd.service
-7.  Создаем 2 файла /etc/sysconfig/httpd-first  **(содержимое файла OPTIONS=-f conf/first.conf)**   и /etc/sysconfig/httpd-second  **(содержимое файла OPTIONS=-f conf/second.conf)**
-8.  ``` cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/first.conf ``` 
-9.  ``` cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/second.conf ```
-10.  Для удачного запуска во втором файле добавляем ``` PidFile /var/run/httpd-second.pid   Listen 8080 ```    
-11.  Проверяем что все работает
-12.  ![alt text](./Pictures/3.png)
+ ## Запустить несколько инстансов сервера
+1. Для запуска нескольких экземпляров сервиса будем использовать шаблон в конфигурации файла окружения /usr/lib/systemd/system/httpd.service
+2.  Создаем 2 файла /etc/sysconfig/httpd-first  **(содержимое файла OPTIONS=-f conf/first.conf)**   и /etc/sysconfig/httpd-second  **(содержимое файла OPTIONS=-f conf/second.conf)**
+3.  ``` cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/first.conf ``` 
+4.  ``` cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/second.conf ```
+5.  Для удачного запуска во втором файле добавляем ``` PidFile /var/run/httpd-second.pid   Listen 8080 ```    
+6.  Проверяем что все работает
+7.  ![alt text](./Pictures/3.png)
 
 
 
