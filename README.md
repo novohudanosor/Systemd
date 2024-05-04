@@ -18,8 +18,9 @@
 7.  Создаем 2 файла /etc/sysconfig/httpd-first  **(содержимое файла OPTIONS=-f conf/first.conf)**   и /etc/sysconfig/httpd-second  **(содержимое файла OPTIONS=-f conf/second.conf)**
 8.  ``` cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/first.conf ``` 
 9.  ``` cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/second.conf ```
-10.  Проверяем что все работает
-11.  ![alt text](./Pictures/3.png)
+10.  Для удачного запуска во втором файле добавляем ``` PidFile /var/run/httpd-second.pid   Listen 8080 ```    
+11.  Проверяем что все работает
+12.  ![alt text](./Pictures/3.png)
 
 
 
